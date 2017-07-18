@@ -1,1 +1,220 @@
-hi i just met you, and this is crazy, but here's an empty page, so comeback maybe?
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ray Tracer</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Ray Tracer</a>
+			    </div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="#primitives">Primitives</a></li>
+						<li><a href="#csg">CSG</a></li>
+						<li><a href="#texture-mapping">Texture Mapping</a></li>
+						<li><a href="#reflection">Reflection</a></li>
+						<li><a href="#glossy_reflection">Glossy Reflection</a></li>
+						<li><a href="#refraction">Refraction</a></li>
+						<li><a href="#glossy_refraction">Glossy Refraction</a></li>
+						<li><a href="#soft_shadow">Soft Shadow</a></li>
+						<li><a href="#dof">Depth of Field</a></li>
+						<li><a href="#motion_blur">Motion Blur</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="header">
+			<div class="text">
+				<div class="innertext">
+					<h1> Ray Tracer </h1>
+					<br />
+					<div>  Yao Huang </div>
+					<div>  CS 488 class 2017 Summer </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="objectives">
+			<div id="primitives" class="item">
+				<div class="objective">
+					<div> Primitives </div>
+				</div>
+				<div class="content">
+					<div class="example-img col-sm-8">
+						<img src="assets/primitive.png"></img>
+					</div>
+					<div class="explanation col-sm-4">
+						Three primitives are supported:
+						<br/> sphere, cylinder and mesh.
+						<br/><br/> The example image on the left shows the primitives and how they look like after various transformation
+
+					</div>
+				</div>
+			</div> 
+			<div id="csg" class="item">
+				<div class="objective">
+					<div> Constructive Solid Geometry </div>
+				</div>
+				<div class="content">
+					<div class="explanation col-sm-4">
+						CSG is implemented supporting:
+						<br/> union, intersect and subtract
+						<br/><br/> The example image on the right shows the result of perfoming CSG actions on two spheres<br/>
+						<br/> first row: union
+						<br/> second row: intersect
+						<br/> third row: subtract
+
+						<br/><br/> note: CSG is not supported for mesh
+					</div>
+					<div class="example-img col-sm-8">
+						<img src="assets/csg.png"></img>
+					</div>
+				</div>
+			</div> 
+			<div id="texture-mapping" class="item">
+				<div class="objective">
+					<div> Texture Mapping </div>
+				</div>
+				<div class="content">
+					<div class="example-img col-sm-8">
+						<img src="assets/texture.png"></img>
+					</div>
+					<div class="explanation col-sm-4">
+						Texture mapping is implemented supporting all primitives:
+						<br/> the result of applying texture mapping is shown on the left
+					</div>
+				</div>
+			</div> 
+			<div id="reflection" class="item">
+				<div class="objective">
+					<div> Reflection </div>
+				</div>
+				<div class="content">
+					<div class="explanation col-sm-4">
+						Reflection is supported by controlling reflection rate (between 0 and 1)
+						<br/><br/>
+						In the case of secondary hitting nothing, color black is applied
+					</div>
+					<div class="example-img col-sm-8">
+						<img src="assets/reflection.png"></img>
+					</div>
+				</div>
+			</div> 
+			<div id="glossy_reflection" class="item">
+				<div class="objective">
+					<div> Glossy Reflection </div>
+				</div>
+				<div class="content">
+					<div class="example-img col-sm-8">
+						<img src="assets/glossy_reflection.png"></img>
+					</div>
+					<div class="explanation col-sm-4">
+						Glossy reflection is supported by controlling how diffuse level (between 0 and 1)
+						<br/><br/>
+						On the example image shown on the left, the top sphere has diffuse level 0. Diffuse index grows from top to bottom.
+					</div>
+				</div>
+			</div> 
+			<div id="refraction" class="item">
+				<div class="objective">
+					<div> Refraction </div>
+				</div>
+				<div class="content">
+					<div class="explanation col-sm-4">
+						Refraction is supported by controlling reflection rate (between 0 and 1)
+						<br/><br/>
+						In the case of secondary hitting nothing, color black is applied
+						<br/><br/>
+						The picture on the left simulates water. 
+						<br/>The one on the right simulates glass.
+					</div>
+					<div class="example-img col-sm-8">
+						<img src="assets/water-refraction.png"></img>
+						<img src="assets/glass-refraction.png"></img>
+					</div>
+				</div>
+			</div> 
+			<div id="glossy_refraction" class="item">
+				<div class="objective">
+					<div> Glossy Refraction </div>
+				</div>
+				<div class="content">
+					<div class="example-img col-sm-8">
+						<img src="assets/no-glossy-refraction.png"></img>
+						<img src="assets/glossy_refraction.png"></img>
+					</div>
+					<div class="explanation col-sm-4">
+						Glossy refraction is supported by controlling how diffuse level (between 0 and 1)
+						<br/><br/>
+						The example image on the left has diffuse level 0 
+						<br/>The one on the right has diffuse level 0.2
+					</div>
+				</div>
+			</div> 
+			<div id="soft_shadow" class="item">
+				<div class="objective">
+					<div> Soft Shadow </div>
+				</div>
+				<div class="content">
+					<div class="explanation col-sm-4">
+						Soft Shadow is implemented by jittering lightRay when deciding if light source is blocked with a certain number of samples.
+						<br/><br/>
+						The one on the left has no soft shadow. 
+						<br/>The one on the right has soft shadow.
+
+					</div>
+					<div class="example-img col-sm-8">
+						<img src="assets/no-soft-shadow.png"></img>
+						<img src="assets/soft_shadow.png"></img>
+					</div>
+				</div>
+			</div> 
+			<div id="dof" class="item">
+				<div class="objective">
+					<div> Depth of Field </div>
+				</div>
+				<div class="content">
+					<div class="example-img col-sm-8">
+						<img src="assets/no-dof.png"></img>
+						<img src="assets/dof.png"></img>
+					</div>
+					<div class="explanation col-sm-4">
+						Depth of Field is supported by controlling dispersion and focus point.
+					</div>
+				</div>
+			</div> 
+			<div id="motion_blur" class="item">
+				<div class="objective">
+					<div> Motion Blur </div>
+				</div>
+				<div class="content">
+					<div class="explanation col-sm-4">
+						Motion Blur is supported by controlling the motion direction and speed(px/second) for geometries.
+					</div>
+					<div class="example-img col-sm-8">
+						<img src="assets/no-motionblur.png"></img>
+						<img src="assets/motionblur.png"></img>
+					</div>
+				</div>
+			</div> 
+		</div>
+
+		<div class="footer">
+			footer reserved for further modification :D
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

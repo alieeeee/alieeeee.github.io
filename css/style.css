@@ -1,0 +1,73 @@
+.navbar-header .navbar-brand {
+	font-weight: bold;
+}
+
+.navbar .container {
+	margin: 0px;
+	width: 100%;
+}
+
+.header {
+	padding-top: 50px;
+	height: 400px;
+	width: 100%;
+	background-image: url("../assets/whirlpool.png");
+    background-repeat: repeat;
+}
+
+img {
+	height: inherit;
+	width: 100%;
+    border-radius: 5px;
+}
+
+.header .text {
+	height: inherit;
+}
+
+.innertext {
+	margin-top: 100px;
+	text-align: center;
+}
+
+.objective {
+	border-top: dashed 1px silver;
+	font-size:30px;
+	height: 50px;
+	padding: 10px;
+	padding-left: 30px;
+	text-align: center;
+}
+
+.content {
+	padding-top: 10px;
+	height: 400px;
+
+}
+
+.example-img {
+	padding: 30px;
+	height: 100%;
+	text-align: center;
+}
+
+.explanation {
+	padding: 30px;
+	text-rendering: center;
+	margin: auto;
+	font-size: 15pt;
+}
+
+
+.example-img img {
+	height: height;
+	width: auto;
+}
+
+.footer {
+	padding: 10px;
+	height: 50px;
+	border-top: 1px dashed silver;
+	font-style: italic;
+	text-align: center;
+}
